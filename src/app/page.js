@@ -9,7 +9,7 @@ import Link from "next/link";
 const Page = () => {
   return (
     <div className="min-h-screen bg-gray-950 text-white flex flex-col md:flex-row items-center justify-between px-10 md:px-32 py-20">
-      {/* LEFT SECTION */}
+     
       <motion.div
         initial={{ opacity: 0, x: -60 }}
         animate={{ opacity: 1, x: 0 }}
@@ -17,7 +17,7 @@ const Page = () => {
         className="space-y-5 max-w-xl"
       >
         <motion.h1
-          className="bg-gray-800 inline-block text-white rounded-3xl px-3 py-1 text-sm tracking-wide"
+          className="bg-gray-800 inline-block text-white rounded-3xl px-3 py-1 text-sm tracking-wide mt-5 md:mt-0"
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.2 }}
@@ -37,7 +37,7 @@ const Page = () => {
         <TypeAnimation
   sequence={[
     "Full Stack Developer", 
-    1500, 
+    1000, 
 
     "",
     500,
@@ -48,10 +48,10 @@ const Page = () => {
   className="text-3xl font-medium text-gray-300"
 />
 
-        <p className="text-gray-400 leading-relaxed text-lg">
+        <p className="text-gray-400 leading-relaxed text-lg pt-2">
           I’m a Full Stack Developer passionate about building efficient,
           dynamic, and user-friendly web applications. I love turning ideas into
-          reality — crafting smooth frontends and powerful backends with clean,
+          reality crafting smooth frontends and powerful backends with clean,
           modern code.
         </p>
 
@@ -64,7 +64,7 @@ const Page = () => {
           Download CV
         </button>
 
-        {/* SOCIAL ICONS */}
+      
         <div className="flex gap-6 mt-8">
           <Link
             href="https://github.com/anujtaywade"
@@ -97,7 +97,7 @@ const Page = () => {
         </div>
       </motion.div>
 
-      {/* RIGHT SECTION - IMAGE */}
+  
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}

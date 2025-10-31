@@ -2,38 +2,48 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-900 text-white p-4">
-      <div className="flex justify-between items-center">
-        <h1 className="text-xl font-bold">A-Folio</h1>
-
+    <nav className="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-gray-900/70 backdrop-blur-lg text-white px-6 py-3 rounded-2xl shadow-lg border border-gray-700/40 w-auto">
+      <div className="flex items-center justify-center">
+     
         <button
-          className="md:hidden"
+          className="md:hidden text-2xl mr-3 focus:outline-none"
           onClick={() => setOpen(!open)}
         >
-          ☰
+          {open ? "✖" : "☰"}
         </button>
 
-        <div className="hidden md:flex space-x-4">
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-          <Link href="/products">Products</Link>
-          <Link href="/contact">Contact</Link>
+       
+        <div className="hidden md:flex space-x-8 text-gray-300">
+          <Link href="/" className="hover:text-blue-400 transition">Home</Link>
+          <Link href="/about" className="hover:text-blue-400 transition">About</Link>
+          <Link href="/projects" className="hover:text-blue-400 transition">Projects</Link>
+          <Link href="/contact" className="hover:text-blue-400 transition">Contact</Link>
         </div>
       </div>
 
-      {open && (
-        <div className="md:hidden mt-4 flex flex-col space-y-2">
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-          <Link href="/products">Products</Link>
-          <Link href="/contact">Contact</Link>
-        </div>
-      )}
+     
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden mt-3 flex flex-col items-center space-y-2 text-gray-300 border-t border-gray-700 pt-3"
+          >
+            <Link href="/" onClick={() => setOpen(false)} className="hover:text-blue-400 transition">Home</Link>
+            <Link href="/about" onClick={() => setOpen(false)} className="hover:text-blue-400 transition">About</Link>
+            <Link href="/projects" onClick={() => setOpen(false)} className="hover:text-blue-400 transition">Projects</Link>
+            <Link href="/contact" onClick={() => setOpen(false)} className="hover:text-blue-400 transition">Contact</Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
