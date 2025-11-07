@@ -5,9 +5,11 @@ import { motion } from "framer-motion";
 import { MapPin, Github, Linkedin, Twitter, Instagram } from "lucide-react";
 import  {TypeAnimation } from "react-type-animation";
 import Link from "next/link";
+import Projects from '@/app/Projects/page';
 
 const Page = () => {
   return (
+    <div>
     <div className="min-h-screen bg-gray-950 text-white flex flex-col md:flex-row items-center justify-between px-10 md:px-32 py-20">
      
       <motion.div
@@ -112,6 +114,10 @@ const Page = () => {
       </motion.div>
 
      
+    </div>
+    <div>
+      <Projects/>
+    </div>
     </div>
     
     
