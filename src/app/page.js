@@ -110,8 +110,15 @@ const Page = () => {
           className="h-80 w-80 rounded-2xl shadow-lg object-cover hover:scale-105 transition-transform"
         />
       </motion.div>
+
+     
     </div>
+    
+    
   );
+
+
+  
 };
 
 export default Page;
