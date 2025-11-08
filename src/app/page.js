@@ -7,6 +7,7 @@ import  {TypeAnimation } from "react-type-animation";
 import Link from "next/link";
 import Projects from '@/app/Projects/page';
 
+
 const Page = () => {
   return (
     <div>
@@ -117,6 +118,7 @@ const Page = () => {
     </div>
     <div>
       <Projects/>
+   
     </div>
     </div>
     

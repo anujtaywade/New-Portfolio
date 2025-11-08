@@ -38,7 +38,7 @@ export default function Navbar() {
             className="md:hidden mt-3 flex flex-col items-center space-y-2 text-gray-300 border-t border-gray-700 pt-3"
           >
             <Link href="/" onClick={() => setOpen(false)} className="hover:text-blue-400 transition">Home</Link>
-            <Link href="/about" onClick={() => setOpen(false)} className="hover:text-blue-400 transition">About</Link>
+            <Link href="/About" onClick={() => setOpen(false)} className="hover:text-blue-400 transition">About</Link>
             <Link href="/projects" onClick={() => setOpen(false)} className="hover:text-blue-400 transition">Projects</Link>
             <Link href="/contact" onClick={() => setOpen(false)} className="hover:text-blue-400 transition">Contact</Link>
           </motion.div>

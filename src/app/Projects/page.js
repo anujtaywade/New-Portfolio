@@ -9,7 +9,7 @@ import {
   Github,
 } from "lucide-react";
 
-const ProjectsPage = () => {
+const Page = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
   const [selectedFilter, setSelectedFilter] = useState("all");
 
@@ -264,4 +264,4 @@ const ProjectsPage = () => {
   );
 };
 
-export default ProjectsPage;
+export default Page;
