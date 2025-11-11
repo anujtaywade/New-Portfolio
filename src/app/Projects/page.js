@@ -73,18 +73,7 @@ const Page = () => {
       live: "",
       Github: "https://github.com/anujtaywade/mini-chat-server",
     },
-    {
-      id: 6,
-      title: "Notes RESTapi ",
-      category: "backend",
-      description:
-        "A backend service built to create, retrieve, update, and delete (CRUD) notes via standard HTTP requests.",
-      tech: ["Express.js"],
-      color: "from-yellow-500 to-orange-500",
-      icon: <Sparkles className="w-6 h-6" />,
-      live: "",
-      Github: "https://github.com/anujtaywade/notes-RESTapi",
-    },
+    
     {
       id: 7,
       title: "Hungman Game",

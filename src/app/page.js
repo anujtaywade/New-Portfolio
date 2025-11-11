@@ -117,11 +117,11 @@ const Page = () => {
 
      
     </div>
-    <div>
+    
       <About/>
       <Projects/>
    
-    </div>
+   
     </div>
     
     
