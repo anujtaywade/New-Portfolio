@@ -6,6 +6,7 @@ import { MapPin, Github, Linkedin, Twitter, Instagram } from "lucide-react";
 import  {TypeAnimation } from "react-type-animation";
 import Link from "next/link";
 import Projects from '@/app/Projects/page';
+import About from '@/app/About/page';
 
 
 const Page = () => {
@@ -117,6 +118,7 @@ const Page = () => {
      
     </div>
     <div>
+      <About/>
       <Projects/>
    
     </div>
