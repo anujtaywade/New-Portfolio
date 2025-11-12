@@ -93,12 +93,7 @@ const AboutPage = () => {
                 
 
               </p>
-              
-              {/* <p className="text-lg text-gray-400 mb-6 leading-relaxed">
-                Based in Maharashtra, India, I specialize in creating scalable web solutions 
-                that solve real-world problems. My approach combines technical expertise with 
-                creative problem-solving to deliver exceptional digital experiences.
-              </p> */}
+    
 
               <div className="flex items-center gap-3 text-gray-400 mb-8">
                 <MapPin className='size-5'/>
