@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Send, Mail, MapPin, Phone, Github, Linkedin, Twitter, Instagram, CheckCircle } from 'lucide-react';
+import emailjs from "@emailjs/browser";
 
 const Page = () => {
   const [formData, setFormData] = useState({
@@ -22,26 +23,30 @@ const Page = () => {
 
   const handleSubmit = () => {
     if (formData.name && formData.email && formData.subject && formData.message) {
-      setSubmitted(true);
+        emailjs.send(
+            process.env.NEXT_PUBLIC_SERVICE_ID,
+            process.env.NEXT_PUBLIC_TEMPLATE_ID,
+            formData,
+            process.env.NEXT_PUBLIC_PUBLIC_KEY
+        )
+        .then(()=>{
+            setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
         setFormData({ name: '', email: '', subject: '', message: '' });
       }, 3000);
+        })
+        .catch((error)=>console.log("error in sending email",error))
+      
     }
   };
 
   const contactInfo = [
-    { icon: Mail, label: 'Email', value: 'anuj@example.com', href: 'mailto:anuj@example.com' },
-    { icon: Phone, label: 'Phone', value: '+91 XXXXX XXXXX', href: 'tel:+91XXXXXXXXXX' },
+    { icon: Mail, label: 'Email', value: 'anujtaywade456@gmail.com', href: 'mailto:anujtaywade456@gmail.com' },
+    { icon: Phone, label: 'Phone', value: '+91 7276587797', href: 'tel:+917276587797' },
     { icon: MapPin, label: 'Location', value: 'Maharashtra, India', href: null }
   ];
 
-  const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Instagram, href: '#', label: 'Instagram' }
-  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 text-white">
@@ -74,6 +79,7 @@ const Page = () => {
             ) : (
               <div className="space-y-6">
                 <div>
+                   
                   <input
                     type="text"
                     name="name"
@@ -140,8 +146,11 @@ const Page = () => {
                   Send Message
                   <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
+                
               </div>
+              
             )}
+            
           </div>
 
           {/* Contact Info & Social */}
@@ -173,24 +182,7 @@ const Page = () => {
               </div>
             </div>
 
-            {/* Social Links */}
-            <div className="bg-slate-900/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-800/50 hover:border-slate-700/50 transition-all duration-300">
-              <h2 className="text-2xl font-bold mb-6">Follow Me</h2>
-              <div className="grid grid-cols-2 gap-4">
-                {socialLinks.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.href}
-                    className="flex items-center gap-3 p-4 rounded-lg bg-slate-800/30 hover:bg-slate-800/50 hover:scale-105 transition-all duration-300 group"
-                  >
-                    <div className="p-2 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-colors">
-                      <social.icon className="w-5 h-5 text-blue-400" />
-                    </div>
-                    <span className="text-sm font-medium">{social.label}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
+            
 
             {/* Availability Badge */}
             <div className="bg-gradient-to-r from-green-900/30 to-emerald-900/30 backdrop-blur-sm rounded-2xl p-6 border border-green-700/30">

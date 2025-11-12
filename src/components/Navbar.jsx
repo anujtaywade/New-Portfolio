@@ -39,7 +39,7 @@ export default function Navbar() {
           >
             <Link href="/" onClick={() => setOpen(false)} className="hover:text-blue-400 transition">Home</Link>
             <Link href="/About" onClick={() => setOpen(false)} className="hover:text-blue-400 transition">About</Link>
-            <Link href="/projects" onClick={() => setOpen(false)} className="hover:text-blue-400 transition">Projects</Link>
+            <Link href="/Projects" onClick={() => setOpen(false)} className="hover:text-blue-400 transition">Projects</Link>
             <Link href="/Contact" onClick={() => setOpen(false)} className="hover:text-blue-400 transition">Contact</Link>
           </motion.div>
         )}

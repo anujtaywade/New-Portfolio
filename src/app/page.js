@@ -2,11 +2,12 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { MapPin, Github, Linkedin, Twitter, Instagram } from "lucide-react";
+import { MapPin, Github, Linkedin, Twitter, Instagram, Contact } from "lucide-react";
 import  {TypeAnimation } from "react-type-animation";
 import Link from "next/link";
 import Projects from '@/app/Projects/page';
 import About from '@/app/About/page';
+
 
 
 const Page = () => {
@@ -121,6 +122,7 @@ const Page = () => {
     
       <About/>
       <Projects/>
+
       
    
    
