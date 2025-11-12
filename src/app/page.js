@@ -10,6 +10,7 @@ import About from '@/app/About/page';
 
 
 const Page = () => {
+ 
   return (
     <div>
     <div className="min-h-screen bg-gray-950 text-white flex flex-col md:flex-row items-center justify-between px-10 md:px-32 py-20">
@@ -120,6 +121,7 @@ const Page = () => {
     
       <About/>
       <Projects/>
+      
    
    
     </div>

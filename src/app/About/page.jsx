@@ -22,7 +22,7 @@ const AboutPage = () => {
     { name: 'React', icon: '⚛️', color: '#61dafb' },
     { name: 'Next.js', icon: '▲', color: '#ffffff' },
     { name: 'Node.js', icon: '🟢', color: '#68a063' },
-    { name: 'Express.js', icon:  (<div className="flex justify-center"><SiExpress className="text-5xl" /></div>), color: 'fffff' },
+    { name: 'Express.js', icon:  (<div className="flex justify-center"><SiExpress className="text-5xl"/></div>), color: 'fffff' },
     { name: 'TypeScript', icon: 'TS', color: '#3178c6' },
     { name: 'MongoDB', icon: '🍃', color: '#47a248' },
     { name: 'PostgreSQL', icon: '🐘', color: '#336791' },
@@ -30,7 +30,7 @@ const AboutPage = () => {
     { name: 'Docker', icon: '🐳', color: '#2496ed' },
     { name: 'Python', icon: '🐍', color: '#50C878' },
     { name: 'Git', icon: '📦', color: '#CD9F61' },
-    { name: 'javascript', icon: (<div className="flex justify-center"><IoLogoJavascript  className="text-5xl" /></div>), color: '#FFFF00 ' },
+    { name: 'javascript', icon: (<div className="flex justify-center"><IoLogoJavascript  className="text-5xl" /></div>), color: '#FFFFE0 ' },
     
   ];
 
@@ -85,9 +85,13 @@ const AboutPage = () => {
           <div className="grid gap-12 items-start">
             <div>
               <p className="text-xl text-gray-300 mb-6 leading-relaxed">
-                I'm a Full Stack Developer passionate about building efficient, dynamic, 
-                and user-friendly web applications. I love turning ideas into reality, 
-                crafting smooth frontends and powerful backends with clean, modern code.
+                My name is Anuj Taywade i'm a 22 year old with a passion for web Developement i like to make intractive web apps and games. I Specialize in building responsive web applications using <br /><br />
+                <span className='text-2xl font-semibold'>Languages:</span>  Javascript , Python <br />
+                <span className='text-2xl font-semibold'> Framework: </span>React.js, Next.js, Express.js <br />
+                <span className='text-2xl font-semibold'> Database: </span> MongoDB , PostgresSQL <br />
+                
+                
+
               </p>
               
               <p className="text-lg text-gray-400 mb-6 leading-relaxed">

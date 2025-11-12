@@ -23,7 +23,7 @@ export default function Navbar() {
           <Link href="/" className="hover:text-blue-400 transition">Home</Link>
           <Link href="/About" className="hover:text-blue-400 transition">About</Link>
           <Link href="/Projects" className="hover:text-blue-400 transition">Projects</Link>
-          <Link href="/contact" className="hover:text-blue-400 transition">Contact</Link>
+          <Link href="/Contact" className="hover:text-blue-400 transition">Contact</Link>
         </div>
       </div>
 
@@ -40,7 +40,7 @@ export default function Navbar() {
             <Link href="/" onClick={() => setOpen(false)} className="hover:text-blue-400 transition">Home</Link>
             <Link href="/About" onClick={() => setOpen(false)} className="hover:text-blue-400 transition">About</Link>
             <Link href="/projects" onClick={() => setOpen(false)} className="hover:text-blue-400 transition">Projects</Link>
-            <Link href="/contact" onClick={() => setOpen(false)} className="hover:text-blue-400 transition">Contact</Link>
+            <Link href="/Contact" onClick={() => setOpen(false)} className="hover:text-blue-400 transition">Contact</Link>
           </motion.div>
         )}
       </AnimatePresence>
