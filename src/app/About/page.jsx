@@ -85,20 +85,20 @@ const AboutPage = () => {
           <div className="grid gap-12 items-start">
             <div>
               <p className="text-xl text-gray-300 mb-6 leading-relaxed">
-                My name is Anuj Taywade i'm a 22 year old with a passion for web Developement i like to make intractive web apps and games. I Specialize in building responsive web applications using <br /><br />
+                My name is Anuj Taywade i'm a 22 year old with a passion for web Developement i like to make intractive web apps and games. I Specialize in building responsive web applications using <br />
                 <span className='text-2xl font-semibold'>Languages:</span>  Javascript , Python <br />
                 <span className='text-2xl font-semibold'> Framework: </span>React.js, Next.js, Express.js <br />
                 <span className='text-2xl font-semibold'> Database: </span> MongoDB , PostgresSQL <br />
-                
+
                 
 
               </p>
               
-              <p className="text-lg text-gray-400 mb-6 leading-relaxed">
+              {/* <p className="text-lg text-gray-400 mb-6 leading-relaxed">
                 Based in Maharashtra, India, I specialize in creating scalable web solutions 
                 that solve real-world problems. My approach combines technical expertise with 
                 creative problem-solving to deliver exceptional digital experiences.
-              </p>
+              </p> */}
 
               <div className="flex items-center gap-3 text-gray-400 mb-8">
                 <MapPin className='size-5'/>

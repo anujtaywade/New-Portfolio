@@ -49,10 +49,10 @@ const Page = () => {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 overflow-hidden text-white ">
       
       <div className="max-w-6xl mx-auto px-6 pt-32 pb-16">
-        {/* Header */}
+
         <div className="text-center mb-16 animate-fade-in">
           <span className="inline-block px-4 py-2 mb-4 text-sm bg-slate-800/50 rounded-full border border-slate-700/50">
             Available for freelancing
@@ -66,7 +66,7 @@ const Page = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Contact Form */}
+         
           <div className="bg-slate-900/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-800/50 hover:border-slate-700/50 transition-all duration-300">
             <h2 className="text-2xl font-bold mb-6">Send a Message</h2>
             
@@ -153,9 +153,9 @@ const Page = () => {
             
           </div>
 
-          {/* Contact Info & Social */}
+     
           <div className="space-y-6">
-            {/* Contact Information */}
+        
             <div className="bg-slate-900/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-800/50 hover:border-slate-700/50 transition-all duration-300">
               <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
               <div className="space-y-4">
@@ -184,7 +184,6 @@ const Page = () => {
 
             
 
-            {/* Availability Badge */}
             <div className="bg-gradient-to-r from-green-900/30 to-emerald-900/30 backdrop-blur-sm rounded-2xl p-6 border border-green-700/30">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
