@@ -66,7 +66,7 @@ const Page = () => {
 
           <a
             href="/Anuj_taywade resume 2025 X.pdf"
-            download={"Anuj_taywade resume 2025 X.pdf"}
+            download={"Anuj_resume.pdf"}
             className="mt-6 px-6 py-2 bg-blue-500 hover:bg-blue-600 transition rounded-lg font-medium shadow-md"
           >
             Download CV
