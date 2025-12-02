@@ -85,7 +85,7 @@ const AboutPage = () => {
           <div className="grid gap-12 items-start">
             <div>
               <p className="text-xl text-gray-300 mb-6 leading-relaxed">
-                My name is Anuj Taywade i'm a 21 year old with a passion for web Developement <br /> I like to make intractive web apps and games.<br />
+                My name is Anuj Taywade i'm a 21 year old with a passion for web & Game Developement<br /> I like to make intractive web apps and games.<br />
             
               </p>
     
