@@ -53,10 +53,8 @@ const Page = () => {
           />
 
           <p className="text-gray-400 leading-relaxed text-lg pt-2">
-            I’m a Full Stack Developer passionate about building efficient,
-            dynamic, and user-friendly web applications. I love turning ideas
-            into reality crafting smooth frontends and powerful backends with
-            clean, modern code.
+            I’m a Full Stack Developer who like to build Web apps and games. <br />
+            With a growing passion for exploring the world of AI.
           </p>
 
           <div className="flex items-center gap-2 text-gray-400 mt-4">

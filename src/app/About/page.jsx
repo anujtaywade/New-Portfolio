@@ -38,13 +38,13 @@ const AboutPage = () => {
     
     {
       degree: '10th HSC ',
-      field: '84%',
+      field: '-',
       institution: 'Alphonsa sr sec school',
       year: '2020',
     },
      {
       degree: '12th SSC ',
-      field: '64%',
+      field: '-',
       institution: 'Alphonsa sr sec school',
       year: '2022',
     },
@@ -85,13 +85,8 @@ const AboutPage = () => {
           <div className="grid gap-12 items-start">
             <div>
               <p className="text-xl text-gray-300 mb-6 leading-relaxed">
-                My name is Anuj Taywade i'm a 22 year old with a passion for web Developement i like to make intractive web apps and games. I Specialize in building responsive web applications using <br />
-                <span className='text-2xl font-semibold'>Languages:</span>  Javascript , Python <br />
-                <span className='text-2xl font-semibold'> Framework: </span>React.js, Next.js, Express.js <br />
-                <span className='text-2xl font-semibold'> Database: </span> MongoDB , PostgresSQL <br />
-
-                
-
+                My name is Anuj Taywade i'm a 21 year old with a passion for web Developement <br /> I like to make intractive web apps and games.<br />
+            
               </p>
     
 
@@ -118,9 +113,6 @@ const AboutPage = () => {
       {techStack.map((tech, index) => (
         <motion.div
           key={tech.name}
-          drag
-          dragElastic={0.6}
-          dragConstraints={{ top: 10, bottom: 0, left: 0, right: 10 }}
           animate={{
             y: [0, -15, 0],
           }}

@@ -12,7 +12,7 @@ export default function Navbar() {
       <div className="flex items-center justify-center">
      
         <button
-          className="md:hidden text-2xl mr-3 focus:outline-none"
+          className="md:hidden text-2xl mr-1 focus:outline-none "
           onClick={() => setOpen(!open)}
         >
           {open ? "✖" : "☰"}
@@ -31,11 +31,12 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden mt-3 flex flex-col items-center space-y-2 text-gray-300 border-t border-gray-700 pt-3"
+           initial={{ x: "-100%", opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: "-100%", opacity: 0 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+           className="md:hidden mt-3 flex flex-row items-center gap-6 text-gray-300 border-t border-gray-700 pt-3 px-4"
+
           >
             <Link href="/" onClick={() => setOpen(false)} className="hover:text-blue-400 transition">Home</Link>
             <Link href="/About" onClick={() => setOpen(false)} className="hover:text-blue-400 transition">About</Link>
