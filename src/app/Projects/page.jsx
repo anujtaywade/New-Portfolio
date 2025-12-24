@@ -98,6 +98,18 @@ const Page = () => {
       live: "",
       Github: "https://github.com/anujtaywade/Todo_app",
     },
+    {
+      id: 9,
+      title: "Vyom Garud",
+      category: "frontend",
+      description:
+        "A simple frontend project for a company basically for internship",
+      tech: ["React.js"],
+      color: "from-yellow-500 to-orange-500",
+      icon: <Sparkles className="w-6 h-6" />,
+      live: "",
+      Github: "https://github.com/anujtaywade/Todo_app",
+    },
   ];
 
   const filters = [
