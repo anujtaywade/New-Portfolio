@@ -108,7 +108,7 @@ const Page = () => {
       color: "from-yellow-500 to-orange-500",
       icon: <Sparkles className="w-6 h-6" />,
       live: "",
-      Github: "https://github.com/anujtaywade/Todo_app",
+      Github: "https://github.com/anujtaywade/VyomGarud",
     },
   ];
 
