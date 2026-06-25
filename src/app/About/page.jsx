@@ -1,186 +1,164 @@
-"use client" ;
-import React, { useState, useEffect } from 'react';
-import { motion } from "framer-motion";
-import { MapPin } from "lucide-react";
-import { SiExpress } from "react-icons/si";
-import { IoLogoJavascript } from "react-icons/io5";
+﻿"use client";
 
+import React from "react";
+import { motion } from "framer-motion";
+import { GraduationCap, MapPin, Sparkles } from "lucide-react";
+import {
+  SiDocker,
+  SiExpress,
+  SiGit,
+  SiJavascript,
+  SiMongodb,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPostgresql,
+  SiPython,
+  SiReact,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
+
+const techStack = [
+  { name: "React", icon: SiReact, color: "text-cyan-300" },
+  { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
+  { name: "Node.js", icon: SiNodedotjs, color: "text-emerald-300" },
+  { name: "Express.js", icon: SiExpress, color: "text-zinc-100" },
+  { name: "TypeScript", icon: SiTypescript, color: "text-sky-300" },
+  { name: "MongoDB", icon: SiMongodb, color: "text-green-300" },
+  { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-300" },
+  { name: "Tailwind", icon: SiTailwindcss, color: "text-teal-300" },
+  { name: "Docker", icon: SiDocker, color: "text-sky-300" },
+  { name: "Python", icon: SiPython, color: "text-amber-300" },
+  { name: "Git", icon: SiGit, color: "text-orange-300" },
+  { name: "javascript", icon: SiJavascript, color: "text-yellow-300" },
+];
+
+const education = [
+  {
+    degree: "10th HSC ",
+    field: "-",
+    institution: "Alphonsa sr sec school",
+    year: "2020",
+  },
+  {
+    degree: "12th SSC ",
+    field: "-",
+    institution: "Alphonsa sr sec school",
+    year: "2022",
+  },
+  {
+    degree: "Bachelor of Engineering",
+    field: "Computer Science and Engineering ",
+    institution: "G H Raisoni Institute of Engineering and Business Management",
+    year: "2022-2026",
+  },
+];
 
 const AboutPage = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
-  const techStack = [
-    { name: 'React', icon: '⚛️', color: '#61dafb' },
-    { name: 'Next.js', icon: '▲', color: '#ffffff' },
-    { name: 'Node.js', icon: '🟢', color: '#68a063' },
-    { name: 'Express.js', icon:  (<div className="flex justify-center"><SiExpress className="text-5xl"/></div>), color: 'fffff' },
-    { name: 'TypeScript', icon: 'TS', color: '#3178c6' },
-    { name: 'MongoDB', icon: '🍃', color: '#47a248' },
-    { name: 'PostgreSQL', icon: '🐘', color: '#336791' },
-    { name: 'Tailwind', icon: '🎨', color: '#06b6d4' },
-    { name: 'Docker', icon: '🐳', color: '#2496ed' },
-    { name: 'Python', icon: '🐍', color: '#50C878' },
-    { name: 'Git', icon: '📦', color: '#CD9F61' },
-    { name: 'javascript', icon: (<div className="flex justify-center"><IoLogoJavascript  className="text-5xl" /></div>), color: '#FFFFE0 ' },
-    
-  ];
-
-  const education = [
-    
-    {
-      degree: '10th HSC ',
-      field: '-',
-      institution: 'Alphonsa sr sec school',
-      year: '2020',
-    },
-     {
-      degree: '12th SSC ',
-      field: '-',
-      institution: 'Alphonsa sr sec school',
-      year: '2022',
-    },
-    {
-      degree: 'Bachelor of Engineering',
-      field: 'Computer Science and Engineering ',
-      institution: 'G H Raisoni Institute of Engineering and Business Management',
-      year: '2022-2026',
-    },
-  ];
-
-  const experience = [
-    {
-      role: 'Full Stack Developer',
-      company: 'Freelance',
-      period: '2023 - Present',
-      description: 'Building custom web applications for clients worldwide'
-    },
-    {
-      role: 'Web Developer',
-      company: 'Previous Company',
-      period: '2022 - 2023',
-      description: 'Developed responsive web applications using React and Node.js'
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-gray-100">
-
-   
-      <div className="pt-32 pb-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          
-          <h1 className="text-6xl font-bold mb-6">
-            About <span className="text-blue-400">Me</span>
-          </h1>
-          
-          <div className="grid gap-12 items-start">
+    <main className="text-white">
+      <section className="px-6 py-24 md:px-10 lg:px-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <div>
-              <p className="text-xl text-gray-300 mb-6 leading-relaxed">
-                My name is Anuj Taywade i'm a 21 year old with a passion for web & Game Developement<br /> I like to make intractive web apps and games.<br />
-            
-              </p>
-    
+              <span className="inline-flex items-center gap-2 rounded-full border border-amber-300/30 bg-amber-300/10 px-4 py-2 text-sm font-medium text-amber-100">
+                <Sparkles className="size-4" />
+                About Me
+              </span>
+              <h1 className="mt-6 text-5xl font-black leading-none text-balance md:text-6xl">
+                About <span className="text-amber-300">Me</span>
+              </h1>
+            </div>
 
-              <div className="flex items-center gap-3 text-gray-400 mb-8">
-                <MapPin className='size-5'/>
+            <div className="surface rounded-[2rem] p-6 md:p-8">
+              <p className="text-lg leading-8 text-zinc-300 text-pretty">
+                My name is Anuj Taywade i&apos;m a 21 year old with a passion for
+                web & Game Developement. I like to make intractive web apps and
+                games.
+              </p>
+
+              <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-zinc-300">
+                <MapPin className="size-5 text-teal-300" />
                 <span>Maharashtra, India</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-
-<div className="py-20 px-6 relative overflow-hidden">
-  <div className="max-w-6xl mx-auto">
-    <h2 className="text-4xl font-bold mb-4 text-center">
-      Tech <span className="text-blue-400">Stack</span>
-    </h2>
-    <p className="text-gray-400 text-center mb-12">
-      Technologies I work with daily
-    </p>
-
-    <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-      {techStack.map((tech, index) => (
-        <motion.div
-          key={tech.name}
-          animate={{
-            y: [0, -15, 0],
-          }}
-          transition={{
-            duration: 3 + Math.random() * 2, 
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: Math.random() * 2,
-          }}
-          whileHover={{
-            scale: 1.15,
-            rotate: Math.random() * 10 - 5,
-          }}
-          whileTap={{
-            scale: 0.95,
-          }}
-          className="relative bg-slate-800/50 backdrop-blur-sm p-6 rounded-2xl border border-gray-700 hover:border-blue-500/50 shadow-lg cursor-grab active:cursor-grabbing"
-        >
-          <div className="text-center">
-            <div className="text-4xl mb-3">{tech.icon}</div>
-            <h3 className="font-semibold text-sm" style={{ color: tech.color }}>
-              {tech.name}
-            </h3>
+      <section className="px-6 py-20 md:px-10 lg:px-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <h2 className="text-4xl font-black md:text-5xl">
+                Tech <span className="text-teal-300">Stack</span>
+              </h2>
+              <p className="mt-3 text-zinc-400">Technologies I work with daily</p>
+            </div>
           </div>
-          <div
-            className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity"
-            style={{
-              background: `radial-gradient(circle at center, ${tech.color}, transparent)`,
-            }}
-          />
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</div>
 
-  
-      <div className="py-20 px-6 bg-slate-900/30">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-4 text-center">
-            Education 
-          </h2>
-          <p className="text-gray-400 text-center mb-12">My academic journey and continuous learning</p>
-          
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+            {techStack.map((tech, index) => {
+              const Icon = tech.icon;
+              return (
+                <motion.div
+                  key={tech.name}
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{ duration: 0.35, delay: index * 0.025 }}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="group rounded-2xl border border-white/10 bg-white/[0.045] p-5 transition hover:border-teal-300/50 hover:bg-white/[0.07]"
+                >
+                  <Icon className={`mb-5 size-9 ${tech.color}`} />
+                  <h3 className="text-sm font-semibold text-zinc-100">
+                    {tech.name}
+                  </h3>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-24 md:px-10 lg:px-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 text-center">
+            <h2 className="text-4xl font-black md:text-5xl">Education</h2>
+            <p className="mt-3 text-zinc-400">
+              My academic journey and continuous learning
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-3">
             {education.map((edu, index) => (
-              <div
-                key={index}
-                className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105"
+              <motion.article
+                key={`${edu.degree}-${edu.year}`}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className="surface rounded-[1.75rem] p-6 transition hover:-translate-y-1 hover:border-amber-300/40"
               >
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-2xl font-bold mb-1">{edu.degree}</h3>
-                    <p className="text-blue-400 font-semibold">{edu.field}</p>
-                  </div>
-                  <span className="text-sm text-gray-500 bg-slate-700/50 px-3 py-1 rounded-full">
+                <div className="mb-6 flex items-start justify-between gap-4">
+                  <span className="grid h-12 w-12 place-items-center rounded-2xl bg-amber-300/15 text-amber-200">
+                    <GraduationCap className="size-6" />
+                  </span>
+                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-zinc-400">
                     {edu.year}
                   </span>
                 </div>
-                <p className="text-gray-400 mb-3">{edu.institution}</p>
-                <p className="text-gray-500 text-sm leading-relaxed">{edu.description}</p>
-              </div>
+                <h3 className="text-xl font-bold text-white">{edu.degree}</h3>
+                <p className="mt-2 font-semibold text-teal-300">{edu.field}</p>
+                <p className="mt-4 text-sm leading-6 text-zinc-400">
+                  {edu.institution}
+                </p>
+              </motion.article>
             ))}
           </div>
         </div>
-      </div>
-
-    </div>
+      </section>
+    </main>
   );
 };
 
