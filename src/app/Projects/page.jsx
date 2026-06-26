@@ -105,6 +105,42 @@ const projects = [
     live: "",
     Github: "https://github.com/anujtaywade/VyomGarud",
   },
+  {
+    id: 10,
+    title: "Url shortner",
+    category: "fullstack",
+    description:
+      "Built a URL shortener using Next.js, MongoDB, and REST APIs with click tracking",
+    tech: ["next.js"],
+    color: "from-cyan-300 to-indigo-400",
+    icon: Sparkles,
+    live: "",
+    Github: "https://github.com/anujtaywade/url-shortner",
+  },
+  {
+    id: 11,
+    title: "Library Management",
+    category: "fullstack",
+    description:
+      "Developed a library management system with authentication and CRUD operations using Django",
+    tech: ["Django"],
+    color: "from-violet-300 to-fuchsia-400",
+    icon: Sparkles,
+    live: "",
+    Github: "https://github.com/anujtaywade/Library_management_system",
+  },
+   {
+    id: 12,
+    title: "Ai Notes Summarizer",
+    category: "fullstack",
+    description:
+      "AI-powered notes summarizer that generates concise summaries from documents using NLP.",
+    tech: ["Django"],
+    color: "from-rose-300 to-amber-300",
+    icon: Sparkles,
+    live: "",
+    Github: "https://github.com/anujtaywade/Library_management_system",
+  },
 ];
 
 const filters = [

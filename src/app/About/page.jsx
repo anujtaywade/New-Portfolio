@@ -2,15 +2,32 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { GraduationCap, MapPin, Sparkles } from "lucide-react";
 import {
+  Boxes,
+  Braces,
+  BriefcaseBusiness,
+  Calendar,
+  Code2,
+  Database,
+  GraduationCap,
+  KeyRound,
+  MapPin,
+  Network,
+  Sparkles,
+} from "lucide-react";
+import {
+  SiCss3,
+  SiDjango,
   SiDocker,
   SiExpress,
   SiGit,
+  SiHtml5,
   SiJavascript,
   SiMongodb,
   SiNextdotjs,
   SiNodedotjs,
+  SiOracle,
+  SiPostman,
   SiPostgresql,
   SiPython,
   SiReact,
@@ -23,14 +40,25 @@ const techStack = [
   { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
   { name: "Node.js", icon: SiNodedotjs, color: "text-emerald-300" },
   { name: "Express.js", icon: SiExpress, color: "text-zinc-100" },
+  { name: "Django", icon: SiDjango, color: "text-emerald-300" },
   { name: "TypeScript", icon: SiTypescript, color: "text-sky-300" },
+  { name: "HTML5", icon: SiHtml5, color: "text-orange-300" },
+  { name: "CSS3", icon: SiCss3, color: "text-blue-300" },
   { name: "MongoDB", icon: SiMongodb, color: "text-green-300" },
   { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-300" },
+  { name: "OracleSQL", icon: SiOracle, color: "text-red-300" },
   { name: "Tailwind", icon: SiTailwindcss, color: "text-teal-300" },
   { name: "Docker", icon: SiDocker, color: "text-sky-300" },
   { name: "Python", icon: SiPython, color: "text-amber-300" },
   { name: "Git", icon: SiGit, color: "text-orange-300" },
+  { name: "Postman", icon: SiPostman, color: "text-orange-300" },
+  { name: "VS Code", icon: Code2, color: "text-sky-300" },
   { name: "javascript", icon: SiJavascript, color: "text-yellow-300" },
+  { name: "REST APIs", icon: Network, color: "text-teal-300" },
+  { name: "JWT Auth", icon: KeyRound, color: "text-amber-300" },
+  { name: "OOP", icon: Boxes, color: "text-fuchsia-300" },
+  { name: "DSA", icon: Braces, color: "text-lime-300" },
+  { name: "MVC", icon: Database, color: "text-violet-300" },
 ];
 
 const education = [
@@ -51,6 +79,29 @@ const education = [
     field: "Computer Science and Engineering ",
     institution: "G H Raisoni Institute of Engineering and Business Management",
     year: "2022-2026",
+  },
+];
+
+const experience = [
+  {
+    role: "MERN Stack Developer",
+    type: "Virtual Intern",
+    company: "SputnikLabs",
+    period: "Nov 2025 - April 2026",
+    highlights: [
+      "Contributed to the development of full stack web applications using React.js, Node.js, Express.js, and Next.js during internship projects.",
+      "Developed skills in REST API Integration, Git, Problem solving Skills and Debugging.",
+    ],
+  },
+  {
+    role: "Wordpress Developer",
+    type: "Virtual Intern",
+    company: "DigiNik Solutions",
+    period: "Jan 2024 - Mar 2024",
+    highlights: [
+      "Worked on responsive design customization and website performance optimization.",
+      "Built and customized WordPress websites using themes, plugins, HTML, and CSS.",
+    ],
   },
 ];
 
@@ -117,6 +168,65 @@ const AboutPage = () => {
                 </motion.div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="experience"
+        className="scroll-mt-28 px-6 py-24 md:px-10 lg:px-16"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full border border-teal-300/30 bg-teal-300/10 px-4 py-2 text-sm font-medium text-teal-100">
+                <BriefcaseBusiness className="size-4" />
+                Resume Experience
+              </span>
+              <h2 className="mt-6 text-4xl font-black md:text-5xl">
+                Work <span className="text-teal-300">Experience</span>
+              </h2>
+              <p className="mt-3 max-w-2xl text-zinc-400">
+                Internship experience from full stack development and WordPress
+                website customization.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative grid gap-5">
+            {experience.map((item, index) => (
+              <motion.article
+                key={`${item.company}-${item.period}`}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className="surface grid gap-6 rounded-[1.75rem] p-6 transition hover:-translate-y-1 hover:border-teal-300/40 md:grid-cols-[0.35fr_1fr]"
+              >
+                <div>
+                  <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-medium text-zinc-400">
+                    <Calendar className="size-3.5 text-amber-300" />
+                    {item.period}
+                  </span>
+                  <h3 className="mt-5 text-2xl font-bold text-white">
+                    {item.role}
+                  </h3>
+                  <p className="mt-2 text-sm font-semibold text-teal-300">
+                    {item.type}
+                  </p>
+                  <p className="mt-4 text-zinc-400">{item.company}</p>
+                </div>
+
+                <ul className="grid gap-2 text-sm leading-5 text-zinc-300">
+                  {item.highlights.map((highlight) => (
+                    <li key={highlight} className="flex gap-2.5">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-300" />
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.article>
+            ))}
           </div>
         </div>
       </section>
