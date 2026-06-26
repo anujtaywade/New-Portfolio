@@ -72,7 +72,7 @@ const AboutPage = () => {
 
             <div className="surface rounded-[2rem] p-6 md:p-8">
               <p className="text-lg leading-8 text-zinc-300 text-pretty">
-                My name is Anuj Taywade i&apos;m a 21 year old with a passion for
+                My name is Anuj i&apos;m a 22 years old with a passion for
                 web & Game Developement. I like to make intractive web apps and
                 games.
               </p>
