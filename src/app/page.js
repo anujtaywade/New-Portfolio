@@ -87,7 +87,7 @@ const Page = () => {
 
             <div className="flex flex-col gap-3 sm:flex-row">
               <a
-                href="/New_resume_june_2026.pdf"
+                href="/Anuj_Taywade_Resume_SoftwareDeveloper.pdf"
                 download="Anuj_resume.pdf"
                 className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-6 py-3 font-semibold text-zinc-950 transition hover:-translate-y-0.5 hover:bg-teal-200"
               >
