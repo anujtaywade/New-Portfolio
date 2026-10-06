@@ -10,7 +10,7 @@ import {
   Zap,
 } from "lucide-react";
 
-const projects = [
+export const projects = [
   {
     id: 1,
     title: "Real Time Chat Application",
@@ -129,9 +129,9 @@ const projects = [
     live: "",
     Github: "https://github.com/anujtaywade/Library_management_system",
   },
-   {
+  {
     id: 12,
-    title: "Ai Notes Summarizer",
+    title: "AI Notes Summarizer",
     category: "fullstack",
     description:
       "AI-powered notes summarizer that generates concise summaries from documents using NLP.",
@@ -139,7 +139,42 @@ const projects = [
     color: "from-rose-300 to-amber-300",
     icon: Sparkles,
     live: "",
-    Github: "https://github.com/anujtaywade/Library_management_system",
+    Github: "https://github.com/anujtaywade/ai-notes-summarizer",
+  },
+  {
+    id: 13,
+    title: "Throttlr",
+    category: "backend",
+    description: "A project focused on request throttling and rate limiting.",
+    tech: [],
+    color: "from-sky-300 to-indigo-400",
+    icon: Zap,
+    live: "",
+    Github: "https://github.com/anujtaywade/Throttlr",
+  },
+  {
+    id: 14,
+    title: "Dating_app",
+    category: "fullstack",
+    status: "ongoing",
+    description: "A dating app project currently in development.",
+    tech: [],
+    color: "from-pink-300 to-rose-400",
+    icon: Sparkles,
+    live: "",
+    Github: "https://github.com/anujtaywade/Dating_app",
+  },
+  {
+    id: 15,
+    title: "Immortal Protocol",
+    category: "fullstack",
+    status: "ongoing",
+    description: "A protocol project currently in development.",
+    tech: [],
+    color: "from-violet-300 to-cyan-300",
+    icon: Layers,
+    live: "",
+    Github: "https://github.com/anujtaywade/Immortal-Protocol",
   },
 ];
 
@@ -157,6 +192,88 @@ const Page = () => {
     selectedFilter === "all"
       ? projects
       : projects.filter((p) => p.category === selectedFilter);
+  const ongoingProjects = filteredProjects.filter((p) => p.status === "ongoing");
+  const completedProjects = filteredProjects.filter((p) => p.status !== "ongoing");
+
+  const renderProjects = (items) => items.map((project, index) => {
+            const Icon = project.icon;
+            return (
+              <article
+                key={project.id}
+                className="group surface relative overflow-hidden rounded-[1.75rem] p-6 transition duration-300 hover:-translate-y-2 hover:border-white/20"
+                style={{ animation: `fadeInUp 0.5s ease-out ${index * 0.06}s both` }}
+              >
+                <div
+                  className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${project.color}`}
+                />
+
+                <div className="mb-8 flex items-start justify-between gap-5">
+                  <div
+                    className={`grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br ${project.color} text-zinc-950 shadow-lg shadow-black/20`}
+                  >
+                    <Icon className="size-6" />
+                  </div>
+                  <div className="flex flex-wrap justify-end gap-2">
+                    {project.status === "ongoing" && (
+                      <span className="rounded-full border border-amber-300/20 bg-amber-300/10 px-3 py-1 text-xs font-medium text-amber-200">
+                        In progress
+                      </span>
+                    )}
+                    <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-medium capitalize text-zinc-400">
+                      {project.category}
+                    </span>
+                  </div>
+                </div>
+
+                <h3 className="text-2xl font-bold leading-tight text-white">
+                  {project.title}
+                </h3>
+                <p className="mt-4 min-h-20 text-sm leading-6 text-zinc-400">
+                  {project.description}
+                </p>
+
+                {project.tech.length > 0 && (
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {project.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-zinc-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                <div className="mt-8 flex gap-3">
+                  <a
+                    href={project.live || undefined}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-disabled={!project.live}
+                    className={`inline-flex flex-1 items-center justify-center gap-2 rounded-2xl px-4 py-3 text-sm font-semibold transition ${
+                      project.live
+                        ? "bg-white text-zinc-950 hover:bg-teal-200"
+                        : "cursor-not-allowed bg-white/[0.04] text-zinc-600"
+                    }`}
+                  >
+                    <ExternalLink className="size-4" />
+                    Live
+                  </a>
+
+                  <a
+                    href={project.Github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${project.title} Github`}
+                    className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-zinc-300 transition hover:border-teal-300/50 hover:text-teal-200"
+                  >
+                    <Github className="size-5" />
+                  </a>
+                </div>
+              </article>
+            );
+          });
 
   return (
     <main className="min-h-screen px-6 py-32 text-white md:px-10 lg:px-16">
@@ -192,77 +309,25 @@ const Page = () => {
           </div>
         </section>
 
-        <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {filteredProjects.map((project, index) => {
-            const Icon = project.icon;
-            return (
-              <article
-                key={project.id}
-                className="group surface relative overflow-hidden rounded-[1.75rem] p-6 transition duration-300 hover:-translate-y-2 hover:border-white/20"
-                style={{ animation: `fadeInUp 0.5s ease-out ${index * 0.06}s both` }}
-              >
-                <div
-                  className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${project.color}`}
-                />
+        {ongoingProjects.length > 0 && (
+          <section className="mb-12">
+            <div className="mb-5">
+              <h2 className="text-2xl font-bold text-white">Ongoing Projects</h2>
+              <p className="mt-2 text-sm text-zinc-400">Currently in progress</p>
+            </div>
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {renderProjects(ongoingProjects)}
+            </div>
+          </section>
+        )}
 
-                <div className="mb-8 flex items-start justify-between gap-5">
-                  <div
-                    className={`grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br ${project.color} text-zinc-950 shadow-lg shadow-black/20`}
-                  >
-                    <Icon className="size-6" />
-                  </div>
-                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-medium capitalize text-zinc-400">
-                    {project.category}
-                  </span>
-                </div>
-
-                <h3 className="text-2xl font-bold leading-tight text-white">
-                  {project.title}
-                </h3>
-                <p className="mt-4 min-h-20 text-sm leading-6 text-zinc-400">
-                  {project.description}
-                </p>
-
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-zinc-300"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="mt-8 flex gap-3">
-                  <a
-                    href={project.live || undefined}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-disabled={!project.live}
-                    className={`inline-flex flex-1 items-center justify-center gap-2 rounded-2xl px-4 py-3 text-sm font-semibold transition ${
-                      project.live
-                        ? "bg-white text-zinc-950 hover:bg-teal-200"
-                        : "cursor-not-allowed bg-white/[0.04] text-zinc-600"
-                    }`}
-                  >
-                    <ExternalLink className="size-4" />
-                    Live
-                  </a>
-
-                  <a
-                    href={project.Github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${project.title} Github`}
-                    className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-zinc-300 transition hover:border-teal-300/50 hover:text-teal-200"
-                  >
-                    <Github className="size-5" />
-                  </a>
-                </div>
-              </article>
-            );
-          })}
+        <section>
+          {ongoingProjects.length > 0 && (
+            <h2 className="mb-5 text-2xl font-bold text-white">Completed Projects</h2>
+          )}
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {renderProjects(completedProjects)}
+          </div>
         </section>
       </div>
 

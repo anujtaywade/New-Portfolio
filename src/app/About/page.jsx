@@ -59,6 +59,7 @@ const techStack = [
   { name: "OOP", icon: Boxes, color: "text-fuchsia-300" },
   { name: "DSA", icon: Braces, color: "text-lime-300" },
   { name: "MVC", icon: Database, color: "text-violet-300" },
+  { name: "AI Tools", icon: Sparkles, color: "text-fuchsia-300" },
 ];
 
 const education = [

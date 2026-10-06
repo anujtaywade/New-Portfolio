@@ -1,5 +1,6 @@
 import React from "react";
 import { Github, Linkedin, Twitter, Instagram, Mail } from "lucide-react";
+import { SiLeetcode } from "react-icons/si";
 
 const Footer = () => {
   const links = [
@@ -14,6 +15,11 @@ const Footer = () => {
       href: "https://www.instagram.com/anuj_taywade07/",
       icon: Instagram,
       label: "Instagram",
+    },
+    {
+      href: "https://leetcode.com/u/anujtaywade/",
+      icon: SiLeetcode,
+      label: "LeetCode",
     },
     {
       href: "mailto:anujtaywade456@gmail.com",

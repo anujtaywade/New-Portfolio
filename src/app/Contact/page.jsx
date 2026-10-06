@@ -13,6 +13,7 @@ import {
   Twitter,
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import { SiLeetcode } from "react-icons/si";
 
 const contactInfo = [
   {
@@ -38,6 +39,7 @@ const socialLinks = [
     icon: Instagram,
     label: "Instagram",
   },
+  { href: "https://leetcode.com/u/anujtaywade/", icon: SiLeetcode, label: "LeetCode" },
 ];
 
 const Page = () => {

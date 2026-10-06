@@ -15,9 +15,10 @@ import {
 } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
 import Link from "next/link";
-import Projects from "@/app/Projects/page";
+import Projects, { projects } from "@/app/Projects/page";
 import About from "@/app/About/page";
 import Image from "next/image";
+import { SiLeetcode } from "react-icons/si";
 
 const socialLinks = [
   { href: "https://github.com/anujtaywade", icon: Github, label: "Github" },
@@ -32,6 +33,7 @@ const socialLinks = [
     icon: Instagram,
     label: "Instagram",
   },
+  { href: "https://leetcode.com/u/anujtaywade/", icon: SiLeetcode, label: "LeetCode" },
 ];
 
 const Page = () => {
@@ -79,9 +81,6 @@ const Page = () => {
               <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2">
                 <MapPin className="size-4 text-amber-300" />
                 Maharashtra, India
-              </span>
-              <span className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2">
-                2023 - Present
               </span>
             </div>
 
@@ -157,10 +156,14 @@ const Page = () => {
                     </pre>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-3 gap-3">
                     <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
-                      <p className="text-3xl font-black text-white">8</p>
-                      <p className="mt-1 text-sm text-zinc-400">Projects</p>
+                      <p className="text-3xl font-black text-white">{projects.length}</p>
+                      <p className="mt-1 text-sm text-zinc-400">Total Projects</p>
+                    </div>
+                    <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
+                      <p className="text-3xl font-black text-amber-200">{projects.filter((project) => project.status === "ongoing").length}</p>
+                      <p className="mt-1 text-sm text-zinc-400">Ongoing</p>
                     </div>
                     <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
                       <p className="text-3xl font-black text-teal-300">AI</p>
